@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+        height: 50px;
+        width: 50px;
+        margin: 2px;
+        background-color: darkgray;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 27px;
+    }
+    #rownaSie{
+        height: 50px;
+        width: 50px;
+        margin: 2px;
+        background-color: darkgray;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 30px;
+        
+    }
+    #formularz{
+        height: 50px;
+        width: 216px;
+        margin: 2px;
+        background-color: darkgray;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 30px;
+        
+    }
+    #element {
+        background-color: blue;
+        height: auto;
+        width: 230px;
+    }
+    </style>
+</head>
+<body>
+    <div id="element">
+    <form name="form">
+        <input type="text" name="ekran" id="formularz"><br>
+
+        <button type="button" onclick="form.ekran.value += '('">(</button>
+        <button type="button" onclick="form.ekran.value += ')'">)</button>
+        <button type="button" onclick="form.ekran.value = sqrt(form.ekran.value)">√</button>
+        <button onclick="form.ekran.value += ''">CE</button><br>
+
+        <button type="button" onclick="form.ekran.value += '7'">7</button>
+        <button type="button" onclick="form.ekran.value += '8'">8</button>
+        <button type="button" onclick="form.ekran.value += '9'">9</button>
+        <button type="button" onclick="form.ekran.value += '*'">X</button><br>
+
+        <button type="button" onclick="form.ekran.value += '4'">4</button>
+        <button type="button" onclick="form.ekran.value += '5'">5</button>
+        <button type="button" onclick="form.ekran.value += '6'">6</button>
+        <button type="button" onclick="form.ekran.value += ':'">÷</button><br>
+
+        <button type="button" onclick="form.ekran.value += '1'">1</button>
+        <button type="button" onclick="form.ekran.value += '2'">2</button>
+        <button type="button" onclick="form.ekran.value += '3'">3</button>
+        <button type="button" onclick="form.ekran.value += '-'">-</button><br>
+
+        <button type="button" onclick="form.ekran.value += '00'">00</button>
+        <button type="button" onclick="form.ekran.value += '0'">0</button>
+        <button type="button" onclick="form.ekran.value += '.'">.</button>
+        <button type="button" onclick="form.ekran.value += '+'">+</button><br>
+    
+
+        <button type="button" onclick="form.ekran.value = potega(form.ekran.value, 2)">x<sup>2</sup></button>
+        <button type="button" onclick="form.ekran.value = potega(form.ekran.value, 3)">x<sup>3</sup></button>
+        <input type="button" value="=" onclick="form.ekran.value = eval(form.ekran.value)" id="rownaSie">
+        <button type="button" onclick="form.ekran.value = obrot(form.ekran.value)">1/x</button>
+        </form>
+    
+
+</div>
+    <script>
+        function potega(x, y) {
+            if (y == 0) 
+                return 1;
+            let p = 1
+            for (let i=0; i<y; i++) {
+                p *= x
+            }
+        return p;
+        }
+    
+       // document.write(potega(2,5))
+
+
+        function sqrt(x){ 
+                let a = x
+            for (let i=0; i<10; i++) {
+                x = (x+(a/x))/2
+            }
+        return x;
+        }
+        
+        function obrot(x) {
+            let y = 1/x;
+            return y;
+        }
+    </script>
+</body>
+</html>
